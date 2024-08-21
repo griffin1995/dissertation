@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 # Import the serializers module from Django REST framework to handle serialization and deserialization
 from rest_framework import serializers
 
+from .models import Note
+
 
 # Serializer class for the User model, used to convert model instances to and from JSON
 class UserSerializer(serializers.ModelSerializer):
@@ -20,3 +22,14 @@ class UserSerializer(serializers.ModelSerializer):
         # Use the create_user method to handle password hashing and user creation
         user = User.objects.create_user(**validated_data)
         return user
+
+
+# Serializer class for the Note model, used to convert model instances to and from JSON
+class NoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        # Specify the model to be serialized
+        model = Note
+        # Define the fields that should be included in the serialized output
+        fields = ["id", "title", "content", "created_at", "author"]
+        # Additional settings, such as making the author field read-only
+        extra_kwargs = {"author": {"read_only": True}}
