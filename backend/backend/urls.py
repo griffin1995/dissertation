@@ -39,4 +39,7 @@ urlpatterns = [
     path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh"),
     # Include the default login and logout views for the Django REST framework
     path("api-auth/", include("rest_framework.urls")),
+    # Include the URLs defined in the 'api' app's urls.py file under the "api/" path.
+    # If the requested path doesn't match any of the specified patterns, Django will forward the request to these included URLs.
+    path("api/", include("api.urls")),
 ]
