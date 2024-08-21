@@ -1,0 +1,10 @@
+asgiref # "Asynchronous Server Gateway Interface" implementation reference
+Django # Python web framework for building web apps
+django-cors-headers # handling Cross-Origin Resource Sharing
+djangorestframework # Toolkit for building Web APIs with Django
+djangorestframework-simplejwt # JSON Web Token authentication for Django REST Framework
+psycopg2-binary # PostgreSQL database adapter
+PyJWT # JSON Web Token implementation in Python
+python-dotenv # read key-value pairs from .env file // set them as environment variables
+pytz #  World Timezone Definitions
+sqlparse # SQL parsing/formatting/validation library
