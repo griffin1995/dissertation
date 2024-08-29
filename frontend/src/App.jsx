@@ -9,11 +9,15 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 // Import a protected route component to guard private routes
 import ProtectedRoute from "./components/ProtectedRoute";
+import Navbar from "./components/Navbar";
 
+import "./styles/App.css"
 // Main App component defining the routes for the application
 function App() {
   return (
     <>
+      <Navbar />
+
       <BrowserRouter>
         <Routes>
           {/* Protected route for the home page, only accessible if authenticated */}

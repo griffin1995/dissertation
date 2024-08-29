@@ -75,17 +75,6 @@ If you prefer or need to start the backend and frontend separately, follow these
      source env/bin/activate
      ```
 
-   - Navigate to the `backend` directory:
-
-     ```bash
-     cd backend
-     ```
-
-   - Start the backend server (replace with your actual startup command, e.g., `python manage.py runserver`):
-
-     ```bash
-     # python manage.py runserver
-     ```
 
 2. **Start the Frontend**:
 
