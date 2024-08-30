@@ -3,7 +3,7 @@
 
 .navbar-container {
   display: flex;
-  font-family: "Nunito Sans", sans-serif;
+
   justify-content: space-between;
   align-items: center;
   height: 64px;
