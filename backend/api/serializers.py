@@ -19,6 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     # Method to create a new User instance
     def create(self, validated_data):
+        print(validated_data)
         # Use the create_user method to handle password hashing and user creation
         user = User.objects.create_user(**validated_data)
         return user
