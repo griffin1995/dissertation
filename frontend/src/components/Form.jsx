@@ -6,7 +6,7 @@ import api from "../api";
 import { useNavigate } from "react-router-dom";
 // Import constants for storing token keys
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import "../styles/Form.css"
+import "../styles/Form.css";
 
 function Form({ route, method }) {
   // State variables for managing form input values and loading state
@@ -70,6 +70,7 @@ function Form({ route, method }) {
       <button className="form-button" type="submit">
         {name}
       </button>
+      <p>{method === "login" ? "Forgot password? Register" : "Log in"}</p>
     </form>
   );
 }
