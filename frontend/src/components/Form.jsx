@@ -6,13 +6,14 @@ import api from "../api";
 import { useNavigate } from "react-router-dom";
 // Import constants for storing token keys
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import "../styles/Form.css";
+import "../styles/Form.css"; // Importing the CSS file for styling the form
 
+// Form component for handling user login and registration
 function Form({ route, method }) {
   // State variables for managing form input values and loading state
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [username, setUsername] = useState(""); // State for storing the username input
+  const [password, setPassword] = useState(""); // State for storing the password input
+  const [loading, setLoading] = useState(false); // State for managing the loading state of the form
 
   // Hook for navigating programmatically
   const navigate = useNavigate();
@@ -32,14 +33,14 @@ function Form({ route, method }) {
         localStorage.setItem(REFRESH_TOKEN, result.data.refresh);
         navigate("/"); // Navigate to home page after successful login
       } else {
-        // If the method is not "login", navigate to the login page after registration
+        // If the method is not "login", navigate to the login page after successful registration
         navigate("/login");
       }
     } catch (error) {
       // Display error message in case of failure
       alert(error);
     } finally {
-      setLoading(false); // Set loading state back to false
+      setLoading(false); // Set loading state back to false after processing is complete
     }
   };
 
@@ -55,7 +56,7 @@ function Form({ route, method }) {
         className="form-input"
         type="text"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={(e) => setUsername(e.target.value)} // Update the username state when input value changes
         placeholder="Username"
       />
       {/* Input field for the password */}
@@ -63,16 +64,17 @@ function Form({ route, method }) {
         className="form-input"
         type="password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) => setPassword(e.target.value)} // Update the password state when input value changes
         placeholder="Password"
       />
-      {/* Submit button that displays either "Login" or "Register" */}
+      {/* Submit button that displays either "Login" or "Register" based on the method */}
       <button className="form-button" type="submit">
         {name}
       </button>
+      {/* Conditional rendering of a prompt for password recovery or switching between login/register */}
       <p>{method === "login" ? "Forgot password? Register" : "Log in"}</p>
     </form>
   );
 }
 
-export default Form;
+export default Form; // Exporting the Form component as the default export
