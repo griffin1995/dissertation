@@ -1,24 +1,30 @@
 # Logs
 logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+npm-debug.log*   # Ignore npm debug logs
+yarn-debug.log*  # Ignore yarn debug logs
+yarn-error.log*  # Ignore yarn error logs
+pnpm-debug.log*  # Ignore pnpm debug logs
+lerna-debug.log* # Ignore lerna debug logs
 
-node_modules
-dist
-dist-ssr
-*.local
+# Node modules
+node_modules # Ignore node_modules directory, where dependencies are installed
+
+# Build output
+dist     # Ignore dist directory where production builds are stored
+dist-ssr # Ignore server-side rendered build output
+*.local  # Ignore any local configuration files
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.vscode/*                # Ignore VSCode settings directory
+!.vscode/extensions.json # Except for the extensions.json file in .vscode
+.idea                    # Ignore JetBrains IDE settings directory
+.DS_Store                # Ignore macOS Finder file
+*.suo                    # Ignore Visual Studio User Options file
+*.ntvs*                  # Ignore Node.js Tools for Visual Studio files
+*.njsproj                # Ignore Node.js project files in Visual Studio
+*.sln                    # Ignore Visual Studio solution files
+*.sw?                    # Ignore swap files created by various text editors
+
+# Environment variables
+.env # Ignore environment variable files
