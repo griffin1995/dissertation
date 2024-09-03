@@ -1,0 +1,79 @@
+/* Centering the h2 elements */
+h2 {
+  text-align: center; /* Centers the text horizontally */
+  margin-bottom: 20px; /* Adds some space below the heading */
+  font-size: 24px; /* Ensures the heading font size is consistent */
+}
+
+/* Styles for the notes section */
+.notes-section {
+  margin-bottom: 2rem; /* Adds space below the notes section */
+}
+
+.notes-section h2 {
+  color: #333; /* Sets the heading color to dark gray */
+  font-size: 24px; /* Sets the font size for the heading */
+}
+
+/* Styles for individual notes */
+.note {
+  background-color: #f9f9f9; /* Sets a light background color for the note */
+  border-left: 5px solid #007bff; /* Adds a left border with a blue color */
+  margin: 10px 0; /* Adds space above and below each note */
+  padding: 10px 15px; /* Adds padding inside the note */
+  border-radius: 5px; /* Rounds the corners of the note */
+}
+
+/* Styles for the form section with glass effect */
+form {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  ); /* Adds a subtle gradient for the glass effect */
+  backdrop-filter: blur(10px); /* Applies the blur effect */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Ensures compatibility with WebKit browsers */
+  border-radius: 8px; /* Rounds the corners of the form */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Adds a light border for the glass effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Retains the original shadow for depth */
+  max-width: 500px; /* Sets a maximum width for the form */
+  margin: auto; /* Centers the form horizontally */
+  padding: 20px; /* Adds padding inside the form */
+}
+
+form h2 {
+  color: #333; /* Sets the heading color to dark gray */
+  font-size: 24px; /* Sets the font size for the form heading */
+  margin-bottom: 20px; /* Adds space below the heading */
+}
+
+form label {
+  font-weight: bold; /* Makes the label text bold */
+  margin-top: 10px; /* Adds space above the label */
+}
+
+form input,
+form textarea {
+  width: 100%; /* Ensures the input and textarea fields take up the full width */
+  padding: 8px; /* Adds padding inside the fields */
+  margin: 8px 0 16px; /* Adds space around the fields */
+  border: 1px solid #ccc; /* Adds a light gray border */
+  border-radius: 4px; /* Rounds the corners of the fields */
+  box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
+}
+
+form input[type="submit"] {
+  background-color: #007bff; /* Sets a blue background for the submit button */
+  color: white; /* Sets the text color to white */
+  padding: 10px 20px; /* Adds padding inside the submit button */
+  border: none; /* Removes the border */
+  border-radius: 4px; /* Rounds the corners of the submit button */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+  font-size: 16px; /* Sets the font size for the submit button */
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3; /* Darkens the button color on hover */
+}

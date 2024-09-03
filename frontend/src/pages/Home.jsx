@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"; // Importing React hooks for state management and lifecycle methods
 import api from "../api"; // Importing the api module to make HTTP requests to the backend
 import Note from "../components/Note"; // Importing the Note component to display individual notes
-
+import "../styles/Home.css"
 // Home component for displaying and managing notes
 function Home() {
   const [notes, setNotes] = useState([]); // State for storing the list of notes
