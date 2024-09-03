@@ -1,5 +1,0 @@
-# Environment variables
-.env # Ignore environment variable files
-
-# SQLite database
-d.sqlite3 # Ignore SQLite database file
