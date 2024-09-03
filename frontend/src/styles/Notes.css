@@ -1,0 +1,56 @@
+.note-container {
+  padding: 20px; /* Matches the padding used in the form */
+  margin: auto; /* Centers the note horizontally */
+  margin-top: 20px; /* Adds a top margin */
+  max-width: 500px; /* Matches the max-width of the form */
+  border-radius: 5px; /* Rounds the corners of the note container */
+
+  /* Glass Effect */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  ); /* Semi-transparent background for the glass effect */
+  backdrop-filter: blur(10px); /* Applies a blur effect to the background */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Ensures compatibility with WebKit browsers */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Light border for the glass effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.note-title {
+  /* Placeholder for note title styles */
+}
+
+.note-content {
+  /* Placeholder for note content styles */
+}
+
+.note-date {
+  font-size: 0.8rem; /* Sets a smaller font size for the note date */
+}
+
+.delete-button {
+  background-color: rgba(
+    244,
+    67,
+    54,
+    0.7
+  ); /* Red background color with 70% opacity */
+  color: white; /* White text color */
+  border: none; /* Removes the border */
+  padding: 10px 20px; /* Adds padding inside the button */
+  border-radius: 5px; /* Rounds the corners of the button */
+  cursor: pointer; /* Changes cursor to a pointer on hover */
+  transition: background-color 0.3s; /* Adds a transition effect for the background color */
+}
+
+.delete-button:hover {
+  background-color: rgba(
+    211,
+    47,
+    47,
+    0.7
+  ); /* Darker red background on hover with 70% opacity */
+}

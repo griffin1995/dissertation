@@ -1,5 +1,5 @@
 import React from "react"; // Importing React library for creating the component
-
+import "../styles/Notes.css"
 // Note component that displays a single note's details and handles deletion
 function Note({ note, onDelete }) {
   // Formatting the note's creation date to a readable format (UK format)
