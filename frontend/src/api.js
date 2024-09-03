@@ -4,7 +4,8 @@ import axios from "axios";
 // Import the ACCESS_TOKEN constant from the constants file
 import { ACCESS_TOKEN } from "./constants";
 
-const apiUrl = "/choreo-apis/dissertation/backend/v1";
+const apiUrl =
+  "https://b11ff729-f17f-4285-9b3d-d9e6cc85e750-dev.e1-eu-north-azure.choreoapis.dev/dissertation/backend/v1";
 
 // Create an axios instance with a base URL from environment variables
 const api = axios.create({
