@@ -4,9 +4,11 @@ import axios from "axios";
 // Import the ACCESS_TOKEN constant from the constants file
 import { ACCESS_TOKEN } from "./constants";
 
+const apiUrl = "/choreo-apis/dissertation/backend/v1";
+
 // Create an axios instance with a base URL from environment variables
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL : apiUrl,
 });
 
 // Add a request interceptor to include the authorization token in headers
