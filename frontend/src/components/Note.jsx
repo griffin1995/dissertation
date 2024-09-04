@@ -1,5 +1,6 @@
-import "../styles/Notes.css";
-// Note component that displays a single note's details and handles deletion
+import "../styles/Notes.scss"; // Importing the CSS file for styling the notes
+
+// Note component that displays a single note's details and handles its deletion
 function Note({ note, onDelete }) {
   // Formatting the note's creation date to a readable format (UK format)
   const formattedDate = new Date(note.created_at).toLocaleDateString("en-UK");

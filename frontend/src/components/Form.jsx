@@ -2,29 +2,27 @@
 import { useState } from "react";
 // Import custom API instance for making HTTP requests
 import api from "../api";
-// Import useNavigate hook for programmatic navigation
+// Import useNavigate hook for programmatic navigation after form submission
 import { useNavigate } from "react-router-dom";
-// Import constants for storing token keys
+// Import constants for storing token keys (access and refresh tokens)
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import "../styles/Form.css"; // Importing the CSS file for styling the form
+import "../styles/Form.scss"; // Importing the CSS file for styling the form
 
 // Form component for handling user login and registration
 function Form({ route, method }) {
-  // State variables for managing form input values and loading state
+  // State variables for managing form input values (username and password)
   const [username, setUsername] = useState(""); // State for storing the username input
   const [password, setPassword] = useState(""); // State for storing the password input
-  const [loading, setLoading] = useState(false); // State for managing the loading state of the form
 
-  // Hook for navigating programmatically
+  // Hook for navigating programmatically after form submission
   const navigate = useNavigate();
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
-    setLoading(true); // Set loading state to true while processing
     e.preventDefault(); // Prevent default form submission behavior
 
     try {
-      // Make API request with provided route and form data
+      // Make API request with provided route and form data (username and password)
       const result = await api.post(route, { username, password });
 
       if (method === "login") {
@@ -33,18 +31,16 @@ function Form({ route, method }) {
         localStorage.setItem(REFRESH_TOKEN, result.data.refresh);
         navigate("/"); // Navigate to home page after successful login
       } else {
-        // If the method is not "login", navigate to the login page after successful registration
+        // If the method is "register", navigate to the login page after successful registration
         navigate("/login");
       }
     } catch (error) {
-      // Display error message in case of failure
+      // Display an error message if the API request fails
       alert(error);
-    } finally {
-      setLoading(false); // Set loading state back to false after processing is complete
     }
   };
 
-  // Determine form title based on the method ("login" or "register")
+  // Determine form title based on the method (either "Login" or "Register")
   const name = method === "login" ? "Login" : "Register";
 
   return (

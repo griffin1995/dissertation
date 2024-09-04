@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
 
-import "./styles/App.css"
+import "./styles/App.scss"
 // Main App component defining the routes for the application
 function App() {
   return (
