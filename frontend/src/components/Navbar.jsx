@@ -1,4 +1,5 @@
 import "../styles/Navbar.scss"; // Importing the CSS file for styling the Navbar component
+import { NavLink } from "react-router-dom"; // Use NavLink for active link styling
 
 function Navbar() {
   return (
@@ -9,17 +10,70 @@ function Navbar() {
       {/* Links section of the navbar */}
       <div className="navbar-links">
         <ul>
-          <li>Home</li>
-          <li>Services</li>
-          <li>Projects</li>
-          <li>About</li>
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "active-link" : undefined
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
+                isActive ? "active-link" : undefined
+              }
+            >
+              Services
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive ? "active-link" : undefined
+              }
+            >
+              Projects
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "active-link" : undefined
+              }
+            >
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/crud"
+              className={({ isActive }) =>
+                isActive ? "active-link" : undefined
+              }
+            >
+              CRUD
+            </NavLink>
+          </li>
         </ul>
       </div>
 
       {/* Contact button in the navbar */}
-      <div className="navbar-button">Contact</div>
+      <div className="navbar-button">
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => (isActive ? "active-link" : undefined)}
+        >
+          Contact
+        </NavLink>
+      </div>
     </div>
   );
 }
 
-export default Navbar; // Exporting the Navbar component as the default export
+export default Navbar;

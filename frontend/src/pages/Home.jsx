@@ -1,11 +1,7 @@
-import NotesPage from "../components/NotesPage";
+import HeroSection from "../components/HeroSection";
 
 function Home() {
-  return (
-    <div>
-      <NotesPage />
-    </div>
-  );
+  return <HeroSection />;
 }
 
 export default Home;
