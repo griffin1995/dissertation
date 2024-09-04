@@ -1,3 +1,6 @@
+@use "../styles/App" as *;
+/* Navbar.css */
+
 .navbar-container {
   display: flex; /* Sets the container to a flexbox layout */
   justify-content: space-between; /* Distributes space evenly between elements */
@@ -41,13 +44,11 @@
 }
 
 .navbar-button {
+  @extend .button-primary; /* Use the global button-primary class from App.css for consistency */
   display: flex; /* Sets the button container to a flexbox layout */
   justify-content: center; /* Centers the button horizontally */
   align-items: center; /* Aligns the button vertically in the center */
   height: 100%; /* Ensures the button takes the full height of the navbar */
   width: 10%; /* Sets the width of the button container */
-  color: white; /* Sets the color of the button text to white */
-  border: 1px solid white; /* Adds a white border around the button */
-  border-radius: 5%; /* Rounds the corners of the button */
   box-sizing: border-box; /* Ensures the border doesn't affect the element's width/height */
 }

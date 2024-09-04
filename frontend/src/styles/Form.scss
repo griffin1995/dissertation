@@ -1,0 +1,25 @@
+@use "../styles/App" as *;
+/* Form.css */
+
+.form-container {
+  @extend .glass-effect; /* Use global glass-effect for consistency */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 400px;
+  color: white;
+}
+
+.form-input {
+  @extend .form-input; /* Use global form-input styles from App.css */
+  width: 90%; /* Adjust width specific to this form */
+}
+
+.form-button {
+  @extend .button-primary; /* Use global button-primary for consistent styling */
+  width: 95%; /* Adjust width specific to this form */
+  margin: 20px 0; /* Adds margin around the button */
+}
