@@ -1,0 +1,63 @@
+.note-container {
+  padding: 20px; /* Matches the padding used in the form */
+  margin: auto; /* Centers the note horizontally */
+  margin-top: 20px; /* Adds a top margin */
+  max-width: 500px; /* Matches the max-width of the form */
+  border-radius: 5px; /* Rounds the corners of the note container */
+
+  /* Glass Effect */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px); /* Applies a blur effect to the background */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Ensures compatibility with WebKit browsers */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Light border for the glass effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.note {
+  background-color: #f9f9f9; /* Light background for the note */
+  border-left: 5px solid #007bff; /* Blue left border for emphasis */
+  margin: 10px 0; /* Adds space above and below each note */
+  padding: 15px; /* Adds padding inside the note */
+  border-radius: 5px; /* Rounds the corners of the note */
+}
+
+.note-title {
+  font-size: 18px; /* Larger font size for the title */
+  font-weight: bold; /* Makes the title bold */
+  margin-bottom: 8px; /* Adds space below the title */
+}
+
+.note-content {
+  font-size: 16px; /* Standard font size for the content */
+  margin-bottom: 8px; /* Adds space below the content */
+}
+
+.note-date {
+  font-size: 0.8rem; /* Sets a smaller font size for the note date */
+  color: #555; /* Subtle gray color for the date */
+}
+
+.delete-button {
+  background-color: rgba(
+    244,
+    67,
+    54,
+    0.7
+  ); /* Red background color with 70% opacity */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: rgba(211, 47, 47, 0.7); /* Darker red background on hover */
+}

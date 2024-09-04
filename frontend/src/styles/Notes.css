@@ -4,19 +4,6 @@
   margin-top: 20px; /* Adds a top margin */
   max-width: 500px; /* Matches the max-width of the form */
   border-radius: 5px; /* Rounds the corners of the note container */
-
-  /* Glass Effect */
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  ); /* Semi-transparent background for the glass effect */
-  backdrop-filter: blur(10px); /* Applies a blur effect to the background */
-  -webkit-backdrop-filter: blur(
-    10px
-  ); /* Ensures compatibility with WebKit browsers */
-  border: 1px solid rgba(255, 255, 255, 0.18); /* Light border for the glass effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .note-title {
