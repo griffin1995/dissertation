@@ -2,8 +2,17 @@ import "../styles/Notes.scss"; // Importing the CSS file for styling the notes
 
 // Note component that displays a single note's details and handles its deletion
 function Note({ note, onDelete }) {
-  // Formatting the note's creation date to a readable format (UK format)
-  const formattedDate = new Date(note.created_at).toLocaleDateString("en-UK");
+  const date = new Date(note.created_at);
+
+  // Extracting the date and time components
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0'); 
+  const year = date.getFullYear();
+
+  // Formatting the date and time as 'HH:MM DD/MM/YYYY'
+  const formattedDate = `${hours}:${minutes} ${day}/${month}/${year}`;
 
   return (
     <div className="note-container">
