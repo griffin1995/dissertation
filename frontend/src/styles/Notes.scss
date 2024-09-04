@@ -1,37 +1,35 @@
-@use "../styles/App" as *;
+@use "../styles/App" as *; /* Import global styles for reuse */
 
-/* Notes.css */
-
-/* Container for each note */
+/* Container for each note with a glass effect */
 .note-container {
-  @extend .glass-effect !optional; /* Use global glass-effect for consistency */
-  padding: 20px; /* Matches the padding used in the form */
+  @extend .glass-effect; /* Apply global glass-effect class for consistency */
+  padding: 20px; /* Padding inside the note container */
   margin: auto; /* Centers the note horizontally */
-  margin-top: 20px; /* Adds a top margin */
-  max-width: 500px; /* Matches the max-width of the form */
-  border-radius: 5px; /* Rounds the corners of the note container */
+  margin-top: 20px; /* Adds spacing above the note */
+  max-width: 500px; /* Sets the maximum width to ensure uniform size */
+  border-radius: 5px; /* Rounds the corners for aesthetic appeal */
 }
 
-/* Title styling for the note */
+/* Title styling for each note */
 .note-title {
-  font-weight: bold; /* Makes the note title bold */
-  font-size: 18px; /* Sets the font size */
-  margin-bottom: 8px; /* Adds space below the title */
+  font-weight: bold; /* Makes the note title stand out */
+  font-size: 18px; /* Sets a larger font size for the title */
+  margin-bottom: 8px; /* Adds spacing below the title */
 }
 
-/* Content styling for the note */
+/* Content styling for the note body */
 .note-content {
-  font-size: 16px; /* Standard font size for the content */
-  margin-bottom: 8px; /* Adds space below the content */
+  font-size: 16px; /* Standard font size for note content */
+  margin-bottom: 8px; /* Adds spacing below the content */
 }
 
-/* Date formatting for the note */
+/* Date formatting for when the note was created */
 .note-date {
-  font-size: 0.8rem; /* Sets a smaller font size for the note date */
-  color: #555; /* Subtle gray color for the date */
+  font-size: 0.8rem; /* Smaller font size for the date */
+  color: #555; /* Light gray color to make the date subtle */
 }
 
 /* Delete button styling */
 .delete-button {
-  @extend .button-danger !optional; /* Use global button-danger class for consistent style */
+  @extend .button-danger; /* Use the global button-danger class for consistent delete button style */
 }

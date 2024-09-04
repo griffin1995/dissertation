@@ -1,4 +1,5 @@
 // Importing Google Fonts
+@use "sass:color";
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
@@ -20,7 +21,12 @@ html {
 
 /* Global styles for the body */
 body {
-  color: rgba(255, 255, 255, 0.7); /* Sets the default text color with 70% opacity */
+  color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Sets the default text color with 70% opacity */
   height: 100%; /* Ensures the body takes up the full height of the viewport */
   margin: 0; /* Removes default margin */
   background: $background-gradient; /* Applies a gradient background from dark blue to soft pink */
@@ -31,7 +37,8 @@ body {
 }
 
 /* Global heading styles */
-h1, h2 {
+h1,
+h2 {
   color: rgba(255, 255, 255, 1); /* Sets h1 and h2 to fully opaque white */
   font-family: $font-heading; /* Uses Bebas Neue for h1 and h2 */
 }
@@ -49,7 +56,11 @@ form textarea {
 
 /* Glass effect class to reuse for any component with a frosted glass look */
 .glass-effect {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /* WebKit compatibility */
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -69,7 +80,7 @@ form textarea {
 }
 
 .button-primary:hover {
-  background-color: darken($primary-color, 10%);
+  background-color: color.scale($primary-color, $lightness: -10%);
 }
 
 .button-danger {

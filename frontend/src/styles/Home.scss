@@ -1,13 +1,14 @@
-/* Home.css */
+@use '../styles/App' as *; // Import global styles from App.scss
 
-/* The .home-container is redundant with the global .container class in App.css, so it can be removed */
+/* The .home-container extends the global .container class from App.scss 
+   to maintain consistent layout and alignment across the app */
 .home-container {
-  @extend .container; /* Use the global container class from App.css */
+  @extend .container; /* Use global container styling for consistency */
 }
 
-/* Center-align the h2, but ensure it's scoped only to the home page to avoid affecting global headings */
+/* Style the h2 heading specifically for the home page */
 .home-container h2 {
-  text-align: center;
-  font-size: 24px; /* You can keep this if you want a different size for home page headings */
-  margin-bottom: 20px;
+  text-align: center; /* Center-align the heading for the home page */
+  font-size: 24px; /* Set a specific font size for headings on the home page */
+  margin-bottom: 20px; /* Add space below the heading for better readability */
 }

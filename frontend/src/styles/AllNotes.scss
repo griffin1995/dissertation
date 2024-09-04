@@ -1,4 +1,4 @@
-/* AllNotes.css */
+@use '../styles/App' as *; /* Ensure you're referencing the correct path for global styles */
 
 /* Container for each note with glass effect */
 .note-container {
@@ -13,7 +13,7 @@
 /* Styling for individual notes */
 .note {
   background-color: #f9f9f9; /* Light background for the note */
-  border-left: 5px solid #007bff; /* Blue left border for emphasis */
+  border-left: 5px solid $primary-color; /* Use primary color for the left border */
   margin: 10px 0; /* Adds space above and below each note */
   padding: 15px; /* Adds padding inside the note */
   border-radius: 5px; /* Rounds the corners of the note */

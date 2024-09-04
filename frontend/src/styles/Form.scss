@@ -1,6 +1,6 @@
-@use "../styles/App" as *;
-/* Form.css */
+@use "../styles/App" as *; /* Import global styles */
 
+/* Form container with glass effect */
 .form-container {
   @extend .glass-effect; /* Use global glass-effect for consistency */
   display: flex;
@@ -13,11 +13,13 @@
   color: white;
 }
 
+/* Form input field styles */
 .form-input {
-  @extend .form-input; /* Use global form-input styles from App.css */
+  @extend .form-input; /* Use global form-input styles */
   width: 90%; /* Adjust width specific to this form */
 }
 
+/* Form button styles */
 .form-button {
   @extend .button-primary; /* Use global button-primary for consistent styling */
   width: 95%; /* Adjust width specific to this form */

@@ -1,54 +1,89 @@
-@use "../styles/App" as *;
-/* Navbar.css */
+@use "../styles/App" as *; /* Import global styles */
 
+/* Navbar container to organize the layout of the navbar */
 .navbar-container {
-  display: flex; /* Sets the container to a flexbox layout */
-  justify-content: space-between; /* Distributes space evenly between elements */
-  align-items: center; /* Aligns items vertically in the center */
-  height: 64px; /* Sets the height of the navbar */
-  padding: 20px 100px; /* Adds padding on the top/bottom and left/right */
-  font-size: 18px; /* Sets the font size for the navbar text */
+  display: flex;
+  justify-content: space-between; /* Space out elements within the navbar */
+  align-items: center; /* Vertically center the elements */
+  height: 64px; /* Fixed height for the navbar */
+  padding: 20px 100px; /* Padding on both sides for spacing */
+  font-size: 18px; /* Base font size for the navbar text */
 }
 
+/* Styling for the logo inside the navbar */
 .navbar-logo {
-  display: flex; /* Sets the logo container to a flexbox layout */
-  font-family: "Bebas Neue", sans-serif; /* Sets the font for the logo */
-  font-size: 40px; /* Sets the font size for the logo */
-  justify-content: center; /* Centers the logo horizontally */
-  align-items: center; /* Aligns the logo vertically in the center */
-  height: 100%; /* Ensures the logo takes the full height of the navbar */
-  width: 10%; /* Sets the width of the logo container */
-  color: white; /* Sets the color of the logo text to white */
+  display: flex;
+  font-family: "Bebas Neue", sans-serif; /* Font specific to the logo */
+  font-size: 40px; /* Large font size for prominence */
+  justify-content: center; /* Center the logo horizontally */
+  align-items: center; /* Center the logo vertically */
+  height: 100%; /* Take up the full height of the navbar */
+  width: 10%; /* Logo takes up 10% of the navbar width */
+  color: white; /* White color for the logo text */
 }
 
+/* Container for the navigation links in the navbar */
 .navbar-links {
-  display: flex; /* Sets the links container to a flexbox layout */
-  opacity: 70%; /* Makes the links slightly transparent */
-  justify-content: center; /* Centers the links horizontally */
-  align-items: center; /* Aligns the links vertically in the center */
-  width: 80%; /* Sets the width of the links container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%; /* Links take up 80% of the navbar width */
+
+  /* Unordered list that holds the links */
+  ul {
+    display: flex;
+    justify-content: space-around; /* Evenly space the links */
+    align-items: center;
+    list-style-type: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 40%; /* The ul takes up 40% of the navbar width */
+
+    /* Individual list items */
+    li {
+      list-style: none; /* Ensure no bullet points for list items */
+
+      /* Links inside the list items */
+      a {
+        color: white; /* White text color for the links */
+        text-decoration: none; /* No underline by default */
+        padding: 10px; /* Padding around the clickable area */
+        transition: color 0.3s ease; /* Smooth transition for color changes on hover */
+
+        &:hover {
+          color: #cccccc; /* Slightly darken the text color on hover */
+        }
+
+        &.active-link {
+          text-decoration: underline; /* Underline the active link */
+          color: white; /* Ensure the active link remains white */
+        }
+      }
+    }
+  }
 }
 
-.navbar-links ul {
-  display: flex; /* Sets the list to a flexbox layout */
-  justify-content: space-around; /* Distributes space evenly between list items */
-  align-items: center; /* Aligns list items vertically in the center */
-  list-style-type: none; /* Removes the default list bullets */
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
-  width: 40%; /* Sets the width of the list */
-}
-
-.navbar-links li {
-  color: white; /* Sets the color of the list items to white */
-}
-
+/* Contact button styling within the navbar */
 .navbar-button {
-  @extend .button-primary; /* Use the global button-primary class from App.css for consistency */
-  display: flex; /* Sets the button container to a flexbox layout */
-  justify-content: center; /* Centers the button horizontally */
-  align-items: center; /* Aligns the button vertically in the center */
-  height: 100%; /* Ensures the button takes the full height of the navbar */
-  width: 10%; /* Sets the width of the button container */
-  box-sizing: border-box; /* Ensures the border doesn't affect the element's width/height */
+  @extend .button-primary; /* Reuse global button styles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Take up the full height of the navbar */
+  width: 10%; /* The button takes up 10% of the navbar width */
+  box-sizing: border-box; /* Ensure the border is included in the element's width and height */
+
+  /* Anchor link inside the button */
+  a {
+    color: white; /* White text color for the button */
+    text-decoration: none; /* No underline for the button text */
+    padding: 10px 20px; /* Padding around the button text */
+    border-radius: 4px; /* Rounded corners for the button */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+
+    &:hover {
+      background-color: #666; /* Darker background on hover */
+      color: white; /* Keep the text color white on hover */
+    }
+  }
 }
