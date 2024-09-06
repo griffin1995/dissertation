@@ -4,9 +4,7 @@
 .herosection-container {
   display: flex; /* Flexbox layout to arrange sections horizontally */
   width: 100vw; /* Full width of the viewport */
-  height: calc(
-    100vh - 104px
-  ); /* Full height of the viewport minus the navbar height */
+  height: 100vh; /* Full height of the viewport minus the navbar height */
   justify-content: space-between; /* Space out the sections evenly */
   margin: 0; /* Remove default margin to avoid extra space */
 }

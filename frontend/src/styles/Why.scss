@@ -1,0 +1,61 @@
+.why-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem;
+    box-sizing: border-box;
+  
+    .writing, .photo {
+      width: 100%;
+    }
+  
+    .writing {
+      display: flex;
+      flex-direction: row; /* Ensure h2 and p are side by side */
+      align-items: center; /* Vertically align the text */
+      justify-content: space-between; /* Distribute the items evenly */
+      gap: 1rem; /* Add space between h2 and p */
+      margin-bottom: 2rem;
+  
+      h2, p {
+        flex-basis: 50%; /* Ensure both h2 and p take 50% width */
+        margin: 0; /* Remove any margins that may affect layout */
+      }
+  
+      h2 {
+        font-size: 2.5rem;
+      }
+  
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+    }
+  
+    .photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+  
+      img {
+        width: 80%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .why-container {
+      padding: 4rem;
+  
+      .writing {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+      }
+    }
+  }
+  

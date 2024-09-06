@@ -1,13 +1,23 @@
 @use "../styles/App" as *; /* Import global styles */
 
-/* Navbar container to organize the layout of the navbar */
+/* Navbar fixed at the top */
 .navbar-container {
+  position: fixed; /* Fixes the navbar to the top */
+  top: 0; /* Ensures it stays at the top */
+  left: 0; /* Aligns it to the left edge */
+  right: 0; /* Aligns it to the right edge */
+  z-index: 1000; /* Ensures the navbar stays on top of other elements */
   display: flex;
   justify-content: space-between; /* Space out elements within the navbar */
   align-items: center; /* Vertically center the elements */
   height: 64px; /* Fixed height for the navbar */
   padding: 20px 100px; /* Padding on both sides for spacing */
   font-size: 18px; /* Base font size for the navbar text */
+}
+
+/* Add margin to main content so it's not hidden behind the fixed navbar */
+.main {
+  margin-top: 84px; /* Adjust this based on your navbar's height */
 }
 
 /* Styling for the logo inside the navbar */
@@ -29,26 +39,23 @@
   align-items: center;
   width: 80%; /* Links take up 80% of the navbar width */
 
-  /* Unordered list that holds the links */
   ul {
     display: flex;
     justify-content: space-around; /* Evenly space the links */
     align-items: center;
     list-style-type: none; /* Remove default list styling */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    margin: 0;
+    padding: 0;
     width: 40%; /* The ul takes up 40% of the navbar width */
 
-    /* Individual list items */
     li {
       list-style: none; /* Ensure no bullet points for list items */
 
-      /* Links inside the list items */
       a {
-        color: white; /* White text color for the links */
-        text-decoration: none; /* No underline by default */
-        padding: 10px; /* Padding around the clickable area */
-        transition: color 0.3s ease; /* Smooth transition for color changes on hover */
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        transition: color 0.3s ease;
 
         &:hover {
           color: #cccccc; /* Slightly darken the text color on hover */
@@ -56,7 +63,7 @@
 
         &.active-link {
           text-decoration: underline; /* Underline the active link */
-          color: white; /* Ensure the active link remains white */
+          color: white;
         }
       }
     }
@@ -65,25 +72,24 @@
 
 /* Contact button styling within the navbar */
 .navbar-button {
-  @extend .button-primary; /* Reuse global button styles */
+  @extend .button-primary;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Take up the full height of the navbar */
-  width: 10%; /* The button takes up 10% of the navbar width */
-  box-sizing: border-box; /* Ensure the border is included in the element's width and height */
+  height: 100%;
+  width: 10%;
+  box-sizing: border-box;
 
-  /* Anchor link inside the button */
   a {
-    color: white; /* White text color for the button */
-    text-decoration: none; /* No underline for the button text */
-    padding: 10px 20px; /* Padding around the button text */
-    border-radius: 4px; /* Rounded corners for the button */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-      background-color: #666; /* Darker background on hover */
-      color: white; /* Keep the text color white on hover */
+      background-color: #666;
+      color: white;
     }
   }
 }

@@ -1,0 +1,68 @@
+.services-container {
+  padding: 4rem;
+  text-align: center;
+  color: #fff;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 2rem; /* Gap between cards */
+    justify-items: center; /* Center cards */
+  }
+
+  .service-card {
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%; /* Make cards responsive */
+    max-width: 300px; /* Optional max width for the cards */
+    text-align: center;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-10px);
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    img {
+      width: 60px; /* Adjust the icon size */
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin: 1rem 0;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: repeat(
+        2,
+        1fr
+      ); /* 2 cards per row on smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .services-grid {
+      grid-template-columns: 1fr; /* 1 card per row on mobile */
+    }
+  }
+}

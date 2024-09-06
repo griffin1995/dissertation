@@ -1,14 +1,14 @@
 // Import useState and useEffect hooks from React for state management and side effects
 import { useState, useEffect } from "react";
-
+import "../styles/NotesPage.scss"
 // Import custom API instance for making HTTP requests to the backend
 import api from "../api";
+import { CreateNote } from "./CreateNote";
+import { AllNotes } from "./AllNotes";
 
 // Import AllNotes and CreateNote components
-import AllNotes from "./AllNotes";
-import CreateNote from "./CreateNote";
 
-function NotesPage() {
+export function NotesPage() {
   // State to store the list of notes fetched from the backend
   const [notes, setNotes] = useState([]);
 
@@ -42,7 +42,7 @@ function NotesPage() {
   };
 
   return (
-    <div>
+    <div className="notes-page-container">
       {/* Render the CreateNote component and pass down the function to refresh the notes after creation */}
       <CreateNote onNoteCreated={getNotes} />
       {/* Render the AllNotes component, passing the list of notes and the delete function */}
@@ -50,5 +50,3 @@ function NotesPage() {
     </div>
   );
 }
-
-export default NotesPage; // Export the NotesPage component as the default export

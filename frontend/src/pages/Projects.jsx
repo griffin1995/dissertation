@@ -1,6 +1,6 @@
 // ./pages/Projects.jsx
 
-function Projects() {
+export function Projects() {
   return (
     <div className="projects-page">
       <h1>Our Projects</h1>
@@ -11,5 +11,3 @@ function Projects() {
     </div>
   );
 }
-
-export default Projects;
