@@ -1,72 +1,192 @@
-.services-container {
-  padding: 4rem; /* Padding around the entire services section */
-  text-align: center; /* Center the text content */
-  color: #fff; /* Set text color to white */
-  min-height: 100vh; /* Ensure the section takes up the full viewport height */
+@import url("https://fonts.googleapis.com/css?family=Lato:300,900");
+
+$transition-ease-in-out: all 0.25s ease-in-out 0s;
+$transition-cubic-bezier: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$animation-offset: 80px;
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Lato", sans-serif;
+  background: #eee;
+  padding: 100px 60px;
+  animation: fade-in 3s ease-in-out forwards;
+}
+strong {
+  font-weight: 900;
+}
+.canvas-wrapper {
   display: flex;
-  flex-direction: column; /* Arrange elements vertically */
-  justify-content: center; /* Center content vertically */
+  flex-wrap: wrap;
+  justify-content: space-between; /* Maximize space between cards */
+  max-width: 1200px; /* Increased width for more spacing */
+  margin: 0 auto;
+}
 
-  h2 {
-    font-size: 2.5rem; /* Large font size for the heading */
-    margin-bottom: 2rem; /* Space below the heading */
-    font-weight: bold; /* Bold font for emphasis */
+.canvas {
+  position: relative;
+  display: block;
+  width: 45%; /* Reduced width to allow more space between the cards */
+  height: 400px;
+  padding: 20px;
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 40px; /* Increased margin for more vertical space between rows */
+}
+
+.canvas_border {
+  position: absolute;
+  top: 40px;
+  left: -40px;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+
+  svg {
+    height: 100%;
+    width: 100%;
   }
+}
 
-  .services-grid {
-    display: grid; /* Use CSS grid layout */
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-    gap: 2rem; /* Gap between the cards */
-    justify-items: center; /* Center the cards within their grid area */
+.rect-gradient {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: erase-line 1s ease-in-out forwards;
+}
+
+.canvas_img-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: rotate(-10deg) skew(-10deg);
+  overflow: hidden;
+  background: white;
+}
+
+.canvas_img {
+  transform: scale3d(0.9, 0.9, 0.9);
+  opacity: 0.3;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.canvas_copy {
+  position: absolute;
+  bottom: 0;
+  left: 85%;
+  text-transform: uppercase;
+  color: #dac527;
+  z-index: 100;
+}
+
+.canvas_copy--left {
+  left: -25%;
+}
+
+.canvas_copy_title {
+  font-size: 62px;
+  display: block;
+  transform: translateX(-#{$animation-offset});
+  transition: $transition-cubic-bezier 0s;
+  color: black;
+}
+
+.canvas_copy_subtitle {
+  display: block;
+  transform: rotate(270deg) translateY(-100%) translateX(calc(-100% - #{$animation-offset}));
+  transform-origin: top left;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  font-size: 24px;
+  font-weight: 900;
+  transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.35s;
+}
+
+.canvas_copy_details {
+  display: block;
+  transition: $transition-cubic-bezier 0.14s;
+  transform: translateX(-#{$animation-offset});
+}
+
+.canvas_border,
+.canvas_img-wrapper,
+.canvas_img {
+  transition: $transition-ease-in-out;
+}
+
+.canvas_border,
+.canvas_img-wrapper {
+  transform: rotate(-10deg) skew(-10deg);
+}
+
+.canvas_copy_title,
+.canvas_copy_subtitle,
+.canvas_copy_details {
+  opacity: 0;
+}
+
+.canvas:hover {
+  .canvas_copy_title,
+  .canvas_copy_subtitle,
+  .canvas_copy_details,
+  .canvas_img {
+    opacity: 1;
   }
-
-  .service-card {
-    padding: 2rem; /* Padding inside each card */
-    border-radius: 10px; /* Rounded corners */
-    width: 100%; /* Make the card take full width */
-    max-width: 300px; /* Optional max width to prevent oversized cards */
-    text-align: center; /* Center the content within each card */
-    transition: transform 0.3s; /* Smooth transition for hover effect */
-
-    &:hover {
-      transform: translateY(-10px); /* Move the card up slightly on hover */
-      background-color: rgba(
-        0,
-        0,
-        0,
-        0.25
-      ); /* Darken the background slightly on hover */
-    }
-
-    img {
-      width: 60px; /* Icon width */
-      height: 60px; /* Icon height */
-      margin-bottom: 1rem; /* Space below the icon */
-    }
-
-    h3 {
-      font-size: 1.25rem; /* Font size for the card title */
-      margin: 1rem 0; /* Space above and below the title */
-      color: #ffffff; /* White color for the title */
-    }
-
-    p {
-      font-size: 0.9rem; /* Font size for the card description */
-      color: #aaa; /* Light gray color for the description */
-    }
+  .canvas_border,
+  .canvas_img-wrapper {
+    transform: rotate(-14deg) skew(-14deg) scale(0.96);
   }
-
-  /* Responsive adjustments for tablet-sized screens */
-  @media (max-width: 768px) {
-    .services-grid {
-      grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-    }
+  .canvas_img {
+    transform: scale3d(1, 1, 1);
   }
+  .canvas_copy_title,
+  .canvas_copy_details {
+    transform: translateX(0);
+  }
+  .canvas_copy_subtitle {
+    transform: rotate(270deg) translateY(-100%) translateX(-100%);
+  }
+  .rect-gradient {
+    animation: draw-line 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+}
 
-  /* Responsive adjustments for mobile-sized screens */
-  @media (max-width: 480px) {
-    .services-grid {
-      grid-template-columns: 1fr; /* 1 card per row */
-    }
+@keyframes draw-line {
+  from {
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes erase-line {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 2000;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

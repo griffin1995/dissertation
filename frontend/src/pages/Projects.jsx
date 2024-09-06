@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Projects.scss"; // Assuming you store the styles separately
 
 export function Projects() {
@@ -73,9 +72,7 @@ export function Projects() {
         className="dr-url"
         target="_blank"
         rel="noopener noreferrer"
-      >
-        
-      </a>
+      ></a>
     </div>
   );
 }
