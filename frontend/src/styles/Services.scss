@@ -4,63 +4,73 @@ $transition-ease-in-out: all 0.25s ease-in-out 0s;
 $transition-cubic-bezier: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 $animation-offset: 80px;
 
+/* Global box-sizing rule to ensure consistent sizing */
 *,
 :after,
 :before {
   box-sizing: border-box;
 }
+
 html,
 body {
-  height: 100%;
-}
-body {
-  font-family: "Lato", sans-serif;
-  background: #eee;
-  padding: 100px 60px;
-  animation: fade-in 3s ease-in-out forwards;
-}
-strong {
-  font-weight: 900;
-}
-.canvas-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Maximize space between cards */
-  max-width: 1200px; /* Increased width for more spacing */
-  margin: 0 auto;
+  height: 100%; /* Set height for full viewport use */
 }
 
+body {
+  font-family: "Lato", sans-serif; /* Use Google font Lato */
+  background: #eee; /* Light background color */
+  padding: 100px 60px; /* Padding around the body */
+  animation: fade-in 3s ease-in-out forwards; /* Fade-in animation */
+}
+
+strong {
+  font-weight: 900; /* Stronger font weight for emphasis */
+}
+
+/* Wrapper for service cards */
+.canvas-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to new lines */
+  justify-content: space-between; /* Ensures maximum space between cards */
+  max-width: 1200px; /* Set maximum width for the card container */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Styles for individual service cards */
 .canvas {
   position: relative;
   display: block;
-  width: 45%; /* Reduced width to allow more space between the cards */
-  height: 400px;
+  width: 45%; /* Reduced width to allow more space between cards */
+  height: 400px; /* Set height for cards */
   padding: 20px;
   color: inherit;
   text-decoration: none;
-  margin-bottom: 40px; /* Increased margin for more vertical space between rows */
+  margin-bottom: 40px; /* Increased margin for vertical spacing between rows */
 }
 
+/* Border for the service cards with gradient effect */
 .canvas_border {
   position: absolute;
   top: 40px;
   left: -40px;
   height: 100%;
   width: 100%;
-  z-index: 0;
+  z-index: 0; /* Ensure border is behind content */
 
   svg {
     height: 100%;
-    width: 100%;
+    width: 100%; /* SVG spans the entire card */
   }
 }
 
+/* Animation for drawing gradient line */
 .rect-gradient {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
-  animation: erase-line 1s ease-in-out forwards;
+  animation: erase-line 1s ease-in-out forwards; /* Line drawing animation */
 }
 
+/* Wrapper for the image inside the card */
 .canvas_img-wrapper {
   position: absolute;
   display: flex;
@@ -70,106 +80,125 @@ strong {
   height: 100%;
   top: 0;
   left: 0;
-  transform: rotate(-10deg) skew(-10deg);
+  transform: rotate(-10deg) skew(-10deg); /* Image wrapper rotation for visual effect */
   overflow: hidden;
   background: white;
 }
 
+/* Image inside the service card */
 .canvas_img {
-  transform: scale3d(0.9, 0.9, 0.9);
-  opacity: 0.3;
-  max-width: 200px;
-  max-height: 200px;
+  transform: scale3d(1.2, 1.2, 1.2); /* Increase image size */
+  opacity: 0.3; /* Slight transparency */
+  max-width: 100%; /* Image fits within card */
+  max-height: 100%; /* Image height fits within card */
 }
 
+/* Text content container for the service card */
 .canvas_copy {
   position: absolute;
   bottom: 0;
-  left: 85%;
+  left: 85%; /* Positioned to the right */
   text-transform: uppercase;
-  color: #dac527;
-  z-index: 100;
+  color: #dac527; /* Gold color for the text */
+  z-index: 100; /* Ensure it's above other elements */
 }
 
+/* Left-aligned copy positioning */
 .canvas_copy--left {
-  left: -25%;
+  left: -25%; /* Positioned to the left */
 }
 
+/* Styles for the main titles */
 .canvas_copy_title {
-  font-size: 62px;
+  font-size: 62px; /* Large font size for title */
   display: block;
-  transform: translateX(-#{$animation-offset});
-  transition: $transition-cubic-bezier 0s;
-  color: black;
+  transform: translateX(-#{$animation-offset}); /* Offset for animation */
+  transition: $transition-cubic-bezier 0s; /* Smooth transition */
+  color: black; /* Title color */
 }
 
+/* Subtitle styles */
 .canvas_copy_subtitle {
   display: block;
-  transform: rotate(270deg) translateY(-100%) translateX(calc(-100% - #{$animation-offset}));
-  transform-origin: top left;
+  transform: rotate(270deg) translateY(-100%)
+    translateX(calc(-100% - #{$animation-offset}));
+  transform-origin: top left; /* Rotated vertically */
   position: absolute;
   left: 0;
   top: 8px;
-  font-size: 24px;
-  font-weight: 900;
-  transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.35s;
+  font-size: 24px; /* Font size for subtitle */
+  font-weight: 900; /* Bold font for subtitle */
+  transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.35s; /* Transition effect */
 }
 
+/* Details (description) text */
 .canvas_copy_details {
   display: block;
-  transition: $transition-cubic-bezier 0.14s;
-  transform: translateX(-#{$animation-offset});
+  transition: $transition-cubic-bezier 0.14s; /* Smooth transition for details */
+  transform: translateX(-#{$animation-offset}); /* Offset for animation */
 }
 
+/* General transition settings for canvas border and images */
 .canvas_border,
 .canvas_img-wrapper,
 .canvas_img {
-  transition: $transition-ease-in-out;
+  transition: $transition-ease-in-out; /* Ease-in-out transition for smooth effects */
 }
 
+/* Rotation for border and image wrapper */
 .canvas_border,
 .canvas_img-wrapper {
-  transform: rotate(-10deg) skew(-10deg);
+  transform: rotate(-10deg) skew(-10deg); /* Default rotation for card elements */
 }
 
+/* Initially hide title, subtitle, and details */
 .canvas_copy_title,
 .canvas_copy_subtitle,
 .canvas_copy_details {
   opacity: 0;
 }
 
+/* Hover effect for the card */
 .canvas:hover {
+  /* Fade-in and transition for text and image */
   .canvas_copy_title,
   .canvas_copy_subtitle,
   .canvas_copy_details,
   .canvas_img {
-    opacity: 1;
+    opacity: 1; /* Show elements */
   }
+
+  /* Additional rotation and scaling for border and image */
   .canvas_border,
   .canvas_img-wrapper {
-    transform: rotate(-14deg) skew(-14deg) scale(0.96);
+    transform: rotate(-14deg) skew(-14deg) scale(0.96); /* More rotation and scaling on hover */
   }
+
   .canvas_img {
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); /* Reset image scale */
   }
+
   .canvas_copy_title,
   .canvas_copy_details {
-    transform: translateX(0);
+    transform: translateX(0); /* Reset animation offset */
   }
+
   .canvas_copy_subtitle {
-    transform: rotate(270deg) translateY(-100%) translateX(-100%);
+    transform: rotate(270deg) translateY(-100%) translateX(-100%); /* Subtitle animation */
   }
+
   .rect-gradient {
-    animation: draw-line 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation: draw-line 3s cubic-bezier(0.19, 1, 0.22, 1) forwards; /* Draw gradient line animation */
   }
 }
 
+/* Keyframe animations for drawing and erasing lines */
 @keyframes draw-line {
   from {
-    stroke-dashoffset: 2000;
+    stroke-dashoffset: 2000; /* Start with the full length of the stroke */
   }
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 0; /* Complete the stroke */
   }
 }
 
@@ -182,11 +211,12 @@ strong {
   }
 }
 
+/* Fade-in animation for body */
 @keyframes fade-in {
   from {
-    opacity: 0;
+    opacity: 0; /* Start with invisible body */
   }
   to {
-    opacity: 1;
+    opacity: 1; /* Fade in to full visibility */
   }
 }

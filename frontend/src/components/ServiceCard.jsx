@@ -1,10 +1,16 @@
+import React from "react";
+
 // ServiceCard component that accepts props for dynamic content
-const ServiceCard = ({ subtitle, title1, title2, details, icon }) => {
+// Props: subtitle, title1, title2, details, icon, alignLeft
+// Renders a clickable card with a dynamic icon, titles, subtitle, and description
+const ServiceCard = ({ subtitle, title1, title2, details, icon, alignLeft }) => {
   return (
     <a href="#" className="canvas">
+      {/* Border with gradient effect around the card */}
       <div className="canvas_border">
         <svg>
           <defs>
+            {/* Linear gradient used for the border of the card */}
             <linearGradient id="grad-orange" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop
                 offset="0%"
@@ -16,6 +22,7 @@ const ServiceCard = ({ subtitle, title1, title2, details, icon }) => {
               ></stop>
             </linearGradient>
           </defs>
+          {/* Rectangle that outlines the border with the gradient */}
           <rect
             id="rect-grad"
             className="rect-gradient"
@@ -29,19 +36,28 @@ const ServiceCard = ({ subtitle, title1, title2, details, icon }) => {
           ></rect>
         </svg>
       </div>
+
+      {/* Wrapper for the icon displayed on the card */}
       <div className="canvas_img-wrapper">
-        {/* Icon for the service card */}
+        {/* Icon for the service card, passed in dynamically as a prop */}
         <img
           className="canvas_img"
           src={icon}
           alt={`${title1} ${title2} Icon`}
         />
       </div>
-      <div className="canvas_copy">
-        {/* Dynamic content based on props */}
+
+      {/* Text content section for the service card */}
+      {/* Conditionally apply canvas_copy--left class based on alignLeft prop */}
+      <div className={`canvas_copy ${alignLeft ? 'canvas_copy--left' : ''}`}>
+        {/* Subtitle displayed above the titles, passed in as a prop */}
         <span className="canvas_copy_subtitle">{subtitle}</span>
+
+        {/* Two dynamic title lines passed as props */}
         <strong className="canvas_copy_title">{title1}</strong>
         <strong className="canvas_copy_title">{title2}</strong>
+
+        {/* Details/description text passed in as a prop */}
         <span className="canvas_copy_details">{details}</span>
       </div>
     </a>
