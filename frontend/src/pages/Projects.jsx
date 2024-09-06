@@ -40,7 +40,11 @@ export function Projects() {
           </div>
           <button></button>
         </div>
-
+        <p>. </p><br></br>
+        <p>. </p><br></br>
+        <p>. </p><br></br>
+        <p>. </p><br></br>
+        <p>. </p><br></br>
         <div className="card card2">
           <h2>Vauxhall</h2>
           <i className="fas fa-arrow-right"></i>

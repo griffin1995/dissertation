@@ -32,7 +32,7 @@ strong {
   display: flex;
   flex-wrap: wrap; /* Allows cards to wrap to new lines */
   justify-content: space-between; /* Ensures maximum space between cards */
-  max-width: 1200px; /* Set maximum width for the card container */
+  max-width: 1440px; /* Adjust the max-width to fit three cards */
   margin: 0 auto; /* Center the container horizontally */
 }
 
@@ -40,7 +40,7 @@ strong {
 .canvas {
   position: relative;
   display: block;
-  width: 45%; /* Reduced width to allow more space between cards */
+  width: 30%; /* Adjust width for 3 cards in one row */
   height: 400px; /* Set height for cards */
   padding: 20px;
   color: inherit;
@@ -87,10 +87,10 @@ strong {
 
 /* Image inside the service card */
 .canvas_img {
-  transform: scale3d(1.2, 1.2, 1.2); /* Increase image size */
+  width: 35%; /* Make sure the image fills the width */
+  height: 35%; /* Make sure the image fills the height */
+  object-fit: contain; /* Scale the image while maintaining aspect ratio */
   opacity: 0.3; /* Slight transparency */
-  max-width: 100%; /* Image fits within card */
-  max-height: 100%; /* Image height fits within card */
 }
 
 /* Text content container for the service card */
