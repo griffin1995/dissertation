@@ -28,6 +28,25 @@
 
     h2 {
       font-size: 2.5rem; /* Larger font size for the heading */
+      position: relative; /* Needed for the underline effect */
+      overflow: hidden; /* Ensure overflow is hidden */
+
+      /* Pseudo-element for the underline */
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Adjust the position of the underline */
+        width: 0%; /* Start with no width */
+        height: 3px; /* Thickness of the underline */
+        background-color: #ffc107; /* Color of the underline */
+        transition: width 0.3s ease-in-out; /* Smooth transition for the width */
+      }
+    }
+
+    /* On hover, expand the underline */
+    &:hover h2::after {
+      width: 100%; /* Full width on hover */
     }
 
     p {
