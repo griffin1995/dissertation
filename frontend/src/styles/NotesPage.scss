@@ -1,5 +1,5 @@
 .notes-page-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100vh; /* Full viewport height to ensure the container spans the entire screen */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange child elements in a vertical column */
 }

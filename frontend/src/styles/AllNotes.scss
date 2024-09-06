@@ -1,44 +1,44 @@
-@use '../styles/App' as *; /* Ensure you're referencing the correct path for global styles */
+@use "../styles/App" as *; /* Ensure you're referencing the correct path for global styles */
 
 /* Container for each note with glass effect */
 .note-container {
-  @extend .glass-effect; /* Use global glass-effect class */
-  padding: 20px; /* Matches the padding used in the form */
+  @extend .glass-effect; /* Use global glass-effect class for frosted glass look */
+  padding: 20px; /* Adds padding inside the container */
   margin: auto; /* Centers the note horizontally */
-  margin-top: 20px; /* Adds a top margin */
-  max-width: 500px; /* Matches the max-width of the form */
+  margin-top: 20px; /* Adds space above the note */
+  max-width: 500px; /* Sets the maximum width for the note container */
   border-radius: 5px; /* Rounds the corners of the note container */
 }
 
 /* Styling for individual notes */
 .note {
-  background-color: #f9f9f9; /* Light background for the note */
-  border-left: 5px solid $primary-color; /* Use primary color for the left border */
-  margin: 10px 0; /* Adds space above and below each note */
+  background-color: #f9f9f9; /* Light background for the note content */
+  border-left: 5px solid $primary-color; /* Left border with primary color for emphasis */
+  margin: 10px 0; /* Adds vertical space between notes */
   padding: 15px; /* Adds padding inside the note */
   border-radius: 5px; /* Rounds the corners of the note */
 }
 
 /* Title styling for the note */
 .note-title {
-  font-size: 18px; /* Larger font size for the title */
+  font-size: 18px; /* Increases font size for note titles */
   font-weight: bold; /* Makes the title bold */
   margin-bottom: 8px; /* Adds space below the title */
 }
 
 /* Content styling for the note */
 .note-content {
-  font-size: 16px; /* Standard font size for the content */
+  font-size: 16px; /* Standard font size for the note content */
   margin-bottom: 8px; /* Adds space below the content */
 }
 
 /* Date formatting for the note */
 .note-date {
-  font-size: 0.8rem; /* Sets a smaller font size for the note date */
-  color: #555; /* Subtle gray color for the date */
+  font-size: 0.8rem; /* Sets a smaller font size for the date */
+  color: #555; /* Light gray color for a subtle appearance */
 }
 
 /* Delete button styling */
 .delete-button {
-  @extend .button-danger; /* Use global button-danger class for delete button */
+  @extend .button-danger; /* Use global button-danger class for styling the delete button */
 }

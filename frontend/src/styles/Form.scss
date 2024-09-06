@@ -3,25 +3,25 @@
 /* Form container with glass effect */
 .form-container {
   @extend .glass-effect; /* Use global glass-effect for consistency */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 50px auto;
-  padding: 20px;
-  max-width: 400px;
-  color: white;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  margin: 50px auto; /* Add margin around the form and center it */
+  padding: 20px; /* Add padding inside the form container */
+  max-width: 400px; /* Limit the form width */
+  color: white; /* Set the text color to white */
 }
 
 /* Form input field styles */
 .form-input {
   @extend .form-input; /* Use global form-input styles */
-  width: 90%; /* Adjust width specific to this form */
+  width: 90%; /* Set the width to 90% of the container */
 }
 
 /* Form button styles */
 .form-button {
-  @extend .button-primary; /* Use global button-primary for consistent styling */
-  width: 95%; /* Adjust width specific to this form */
-  margin: 20px 0; /* Adds margin around the button */
+  @extend .button-primary; /* Use global button-primary for consistent button styling */
+  width: 95%; /* Set the button width to 95% of the container */
+  margin: 20px 0; /* Add margin around the button */
 }

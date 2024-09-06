@@ -1,68 +1,72 @@
 .services-container {
-  padding: 4rem;
-  text-align: center;
-  color: #fff;
-  min-height: 100vh; /* Full viewport height */
+  padding: 4rem; /* Padding around the entire services section */
+  text-align: center; /* Center the text content */
+  color: #fff; /* Set text color to white */
+  min-height: 100vh; /* Ensure the section takes up the full viewport height */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Arrange elements vertically */
   justify-content: center; /* Center content vertically */
 
   h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    font-weight: bold;
+    font-size: 2.5rem; /* Large font size for the heading */
+    margin-bottom: 2rem; /* Space below the heading */
+    font-weight: bold; /* Bold font for emphasis */
   }
 
   .services-grid {
-    display: grid;
+    display: grid; /* Use CSS grid layout */
     grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-    gap: 2rem; /* Gap between cards */
-    justify-items: center; /* Center cards */
+    gap: 2rem; /* Gap between the cards */
+    justify-items: center; /* Center the cards within their grid area */
   }
 
   .service-card {
-    padding: 2rem;
-    border-radius: 10px;
-    width: 100%; /* Make cards responsive */
-    max-width: 300px; /* Optional max width for the cards */
-    text-align: center;
-    transition: transform 0.3s;
+    padding: 2rem; /* Padding inside each card */
+    border-radius: 10px; /* Rounded corners */
+    width: 100%; /* Make the card take full width */
+    max-width: 300px; /* Optional max width to prevent oversized cards */
+    text-align: center; /* Center the content within each card */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
 
     &:hover {
-      transform: translateY(-10px);
-      background-color: rgba(0, 0, 0, 0.25);
+      transform: translateY(-10px); /* Move the card up slightly on hover */
+      background-color: rgba(
+        0,
+        0,
+        0,
+        0.25
+      ); /* Darken the background slightly on hover */
     }
 
     img {
-      width: 60px; /* Adjust the icon size */
-      height: 60px;
-      margin-bottom: 1rem;
+      width: 60px; /* Icon width */
+      height: 60px; /* Icon height */
+      margin-bottom: 1rem; /* Space below the icon */
     }
 
     h3 {
-      font-size: 1.25rem;
-      margin: 1rem 0;
-      color: #ffffff;
+      font-size: 1.25rem; /* Font size for the card title */
+      margin: 1rem 0; /* Space above and below the title */
+      color: #ffffff; /* White color for the title */
     }
 
     p {
-      font-size: 0.9rem;
-      color: #aaa;
+      font-size: 0.9rem; /* Font size for the card description */
+      color: #aaa; /* Light gray color for the description */
     }
   }
 
+  /* Responsive adjustments for tablet-sized screens */
   @media (max-width: 768px) {
     .services-grid {
-      grid-template-columns: repeat(
-        2,
-        1fr
-      ); /* 2 cards per row on smaller screens */
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
     }
   }
 
+  /* Responsive adjustments for mobile-sized screens */
   @media (max-width: 480px) {
     .services-grid {
-      grid-template-columns: 1fr; /* 1 card per row on mobile */
+      grid-template-columns: 1fr; /* 1 card per row */
     }
   }
 }

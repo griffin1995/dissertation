@@ -35,14 +35,14 @@
 /* Container for the navigation links in the navbar */
 .navbar-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center the links within their container */
+  align-items: center; /* Vertically center the links */
   width: 80%; /* Links take up 80% of the navbar width */
 
   ul {
     display: flex;
     justify-content: space-around; /* Evenly space the links */
-    align-items: center;
+    align-items: center; /* Vertically center the list items */
     list-style-type: none; /* Remove default list styling */
     margin: 0;
     padding: 0;
@@ -53,9 +53,9 @@
 
       a {
         color: white;
-        text-decoration: none;
-        padding: 10px;
-        transition: color 0.3s ease;
+        text-decoration: none; /* Remove underline for links */
+        padding: 10px; /* Add padding inside the link */
+        transition: color 0.3s ease; /* Smooth transition on hover */
 
         &:hover {
           color: #cccccc; /* Slightly darken the text color on hover */
@@ -63,7 +63,7 @@
 
         &.active-link {
           text-decoration: underline; /* Underline the active link */
-          color: white;
+          color: white; /* Keep the color white for active links */
         }
       }
     }
@@ -72,24 +72,24 @@
 
 /* Contact button styling within the navbar */
 .navbar-button {
-  @extend .button-primary;
+  @extend .button-primary; /* Reuse the global button-primary class */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 10%;
+  height: 100%; /* Full height of the navbar */
+  width: 10%; /* Button takes up 10% of the navbar width */
   box-sizing: border-box;
 
   a {
     color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none; /* Remove underline from the button text */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 4px; /* Rounded corners for the button */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
 
     &:hover {
-      background-color: #666;
-      color: white;
+      background-color: #666; /* Darker background color on hover */
+      color: white; /* Ensure the text color stays white */
     }
   }
 }

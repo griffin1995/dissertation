@@ -1,4 +1,13 @@
-/* HeroSection.scss */
+/* Container for the entire hero section */
+.herosection-container {
+  display: flex; /* Flexbox layout to arrange sections horizontally */
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  justify-content: space-between; /* Space out the sections evenly */
+  margin: 0; /* Remove default margin to avoid extra space */
+}
+
+/* Styling for the text content section *//* HeroSection.scss */
 
 /* Container for the entire hero section */
 .herosection-container {
@@ -10,6 +19,36 @@
 }
 
 /* Styling for the text content section */
+.writing {
+  display: flex;
+  flex-direction: column; /* Stack text elements vertically */
+  justify-content: center; /* Vertically center the text within the section */
+  align-items: center; /* Horizontally center the text */
+  text-align: center; /* Center-align the text content */
+  max-width: 50%; /* Take up 50% of the hero section's width */
+
+  /* Heading styles scoped within the writing section */
+  h2 {
+    margin: 0; /* Remove default margin for precise control */
+    padding-bottom: 10px; /* Add spacing below the heading */
+    font-size: 5.6rem; /* Large font size for visual emphasis */
+  }
+}
+
+/* Styling for the image section */
+.photo {
+  flex: 1; /* Let the photo section take up the remaining available space */
+  display: flex;
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+
+  img {
+    width: 50%; /* Set the image width to 50% of the photo section */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Fit the image inside the container without cropping */
+  }
+}
+
 .writing {
   display: flex;
   flex-direction: column; /* Stack text elements vertically */
