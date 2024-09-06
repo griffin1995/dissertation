@@ -87,9 +87,6 @@
     border-radius: 4px; /* Rounded corners for the button */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
 
-    &:hover {
-      background-color: #666; /* Darker background color on hover */
-      color: white; /* Ensure the text color stays white */
-    }
+  
   }
 }

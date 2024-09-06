@@ -1,0 +1,181 @@
+/* Projects.css */
+
+$bg-color: #e6e5e1;
+$orange: #da4d1d;
+$blue: #2b26c3;
+$img-url: "https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80";
+$img-url2: "https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-0.3.5&s=3a2fc3039516555bbb2e9cd2967bd321&auto=format&fit=crop&w=1537&q=80";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+i {
+  opacity: 0;
+  font-size: 18px;
+  color: #fff;
+  transform: scale(0.1);
+  transition: all 0.2s ease;
+}
+
+h2 {
+  pointer-events: none;
+}
+
+body {
+  background-color: $bg-color;
+  width: 100vw;
+  height: 100vh;
+}
+
+.projects-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  width: 500px;
+  height: 200px;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 4px;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    background-color: $bg-color;
+  }
+  &:before {
+    top: -10px;
+    left: 32px;
+  }
+  &:after {
+    bottom: -10px;
+    left: 32px;
+  }
+
+  ul {
+    position: absolute;
+    left: 39px;
+    top: 5px;
+    list-style-type: none;
+
+    li {
+      width: 2px;
+      height: 2px;
+      border-radius: 2px;
+      margin: 6px 0;
+      background-color: $bg-color;
+    }
+  }
+
+  h2 {
+    position: absolute;
+    bottom: 0;
+    right: 130px;
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .fa-arrow-right {
+    position: absolute;
+    right: 75px;
+    bottom: 25px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+  p {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    color: #333;
+    opacity: 0.7;
+    font-size: 12px;
+    writing-mode: vertical-lr;
+    transition: all 0.2s ease;
+  }
+
+  .pic {
+    width: 400px;
+    height: 200px;
+    background-size: 100% 100%;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+
+  .social {
+    position: absolute;
+    left: 60px;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 180px;
+    height: 64px;
+    border-radius: 80px;
+  }
+
+  &:hover i {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  button {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 30px;
+    height: 30px;
+    background-color: $orange;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  &:hover button {
+    transform: scale(16.5);
+  }
+
+  &:hover p {
+    color: #fff;
+  }
+
+  &:hover .pic {
+    filter: grayscale(0);
+  }
+}
+
+.card2 .pic {
+  background-image: url($img-url2);
+}
+
+.card2 button {
+  background-color: $blue;
+}
+
+.dr {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 100px;
+}
