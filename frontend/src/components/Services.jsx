@@ -5,9 +5,9 @@ import "../styles/Services.scss";
 import ServiceCard from "./ServiceCard";
 
 // Import service icons for use in the service cards
-import writing from "../assets/services/writing.svg";
-import mobile from "../assets/services/mobile.svg";
-import conversion from "../assets/services/conversion.svg";
+import credibility from "../assets/services/credibility.svg";
+import devices from "../assets/services/devices.svg";
+import barchart from "../assets/services/barchart.svg";
 
 // The Services component renders a section displaying the various services offered
 export function Services() {
@@ -19,7 +19,7 @@ export function Services() {
         title1="Modern"
         title2="Website Design"
         details="Build trust with a visually appealing, secure, and up-to-date website that aligns with the latest trends and standards."
-        icon={writing}
+        icon={credibility}
         alignLeft={true}
       />
 
@@ -29,7 +29,7 @@ export function Services() {
         title1="Optimized"
         title2="for All Devices"
         details="Ensure seamless user experience across all platforms with responsive design, intuitive navigation, and accessibility for all users."
-        icon={mobile}
+        icon={devices}
         alignLeft={true} // Right aligned by default
       />
 
@@ -39,7 +39,7 @@ export function Services() {
         title1="Higher"
         title2="Conversion Rates"
         details="Faster load times, optimized calls to action, and continuous performance tracking to boost user engagement and business success."
-        icon={"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png"}
+        icon={barchart}
         alignLeft={true}
       />
     </div>
