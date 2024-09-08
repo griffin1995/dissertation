@@ -10,3 +10,4 @@ export * from "./NotesPage"; // Export everything from the NotesPage module
 export * from "./ProtectedRoute"; // Export everything from the ProtectedRoute module
 export * from "./Why"; // Export everything from the Why module
 export * from "./Services"; // Export everything from the Services module
+export * from "./ProjectCard";
