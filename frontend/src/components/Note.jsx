@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"; // Import PropTypes for props validation
 import "../styles/Notes.scss"; // Importing the CSS file for styling the notes
 
 // Note component that displays a single note's details and handles its deletion
@@ -33,3 +34,19 @@ export function Note({ note, onDelete }) {
     </div>
   );
 }
+
+// PropTypes validation for the Note component
+Note.propTypes = {
+  // Define the shape of the 'note' prop
+  note: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired, // note ID can be a string or number
+    title: PropTypes.string.isRequired, // Title of the note is required
+    content: PropTypes.string.isRequired, // Content of the note is required
+    created_at: PropTypes.string.isRequired, // created_at is required and should be a string (ISO date)
+  }).isRequired, // 'note' object is required
+
+  // onDelete function is required for deleting the note
+  onDelete: PropTypes.func.isRequired,
+};
+
+export default Note;

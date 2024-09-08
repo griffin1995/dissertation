@@ -13,8 +13,8 @@ export function Why() {
         <h2>Why Choose Us?</h2>
         <p>
           Discover how our expertise and commitment can help you achieve your
-          goals. Watch this brief video to see why we're the perfect partner for
-          your success.
+          goals. Watch this brief video to see why we&apos;re the perfect
+          partner for your success.
         </p>
       </div>
 

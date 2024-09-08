@@ -12,9 +12,9 @@ export function HeroSection() {
       <div className="writing">
         <h2>Bring Your Vision to Life</h2>
         <p>
-          I'm Jack Griffin, specializing in UI/UX design and digital services,
-          tailored specifically for UK businesses. With a commitment to
-          delivering top-notch solutions, I’m here to help you build an
+          I&apos;m Jack Griffin, specializing in UI/UX design and digital
+          services, tailored specifically for UK businesses. With a commitment
+          to delivering top-notch solutions, I&apos;m here to help you build an
           outstanding platform that meets your goals.
         </p>
       </div>

@@ -1,9 +1,16 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 // ServiceCard component that accepts props for dynamic content
 // Props: subtitle, title1, title2, details, icon, alignLeft
 // Renders a clickable card with a dynamic icon, titles, subtitle, and description
-const ServiceCard = ({ subtitle, title1, title2, details, icon, alignLeft }) => {
+const ServiceCard = ({
+  subtitle,
+  title1,
+  title2,
+  details,
+  icon,
+  alignLeft,
+}) => {
   return (
     <a href="#" className="canvas">
       {/* Border with gradient effect around the card */}
@@ -49,7 +56,7 @@ const ServiceCard = ({ subtitle, title1, title2, details, icon, alignLeft }) => 
 
       {/* Text content section for the service card */}
       {/* Conditionally apply canvas_copy--left class based on alignLeft prop */}
-      <div className={`canvas_copy ${alignLeft ? 'canvas_copy--left' : ''}`}>
+      <div className={`canvas_copy ${alignLeft ? "canvas_copy--left" : ""}`}>
         {/* Subtitle displayed above the titles, passed in as a prop */}
         <span className="canvas_copy_subtitle">{subtitle}</span>
 
@@ -62,6 +69,21 @@ const ServiceCard = ({ subtitle, title1, title2, details, icon, alignLeft }) => 
       </div>
     </a>
   );
+};
+
+// Define prop types for the ServiceCard component
+ServiceCard.propTypes = {
+  subtitle: PropTypes.string.isRequired, // Subtitle must be a string and is required
+  title1: PropTypes.string.isRequired, // Title1 must be a string and is required
+  title2: PropTypes.string.isRequired, // Title2 must be a string and is required
+  details: PropTypes.string.isRequired, // Details must be a string and is required
+  icon: PropTypes.string.isRequired, // Icon must be a string (URL) and is required
+  alignLeft: PropTypes.bool, // alignLeft is a boolean to control text alignment, optional
+};
+
+// Default prop values for optional props
+ServiceCard.defaultProps = {
+  alignLeft: false, // Default alignment is not left
 };
 
 export default ServiceCard;

@@ -1,22 +1,24 @@
-import { useState } from "react"; // Importing useState hook to manage component state
+import { useState } from "react";
+import PropTypes from "prop-types"; // Import PropTypes for props validation
 import api from "../api"; // Importing the custom API instance for making HTTP requests
 import "../styles/CreateNote.scss"; // Importing the CSS file for styling the CreateNote component
 
 // CreateNote component handles the creation of new notes
 export function CreateNote({ onNoteCreated }) {
   // State variables for managing the input values of title and content
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [title, setTitle] = useState(""); // Manage title input
+  const [content, setContent] = useState(""); // Manage content input
 
   // Function to handle note creation and form submission
   const createNote = (e) => {
     e.preventDefault(); // Prevent default form submission behavior
+
+    // Send POST request to create a new note with title and content
     api
-      .post("/api/notes/", { title, content }) // Send POST request to create a new note with title and content
+      .post("/api/notes/", { title, content })
       .then((res) => {
         if (res.status === 201) {
-          // If the note creation is successful (HTTP 201 Created)
-          alert("Note created.");
+          alert("Note created."); // Alert user of successful creation
           onNoteCreated(); // Notify parent component to refresh the notes list
         } else {
           alert("Failed to create note."); // Show error if note creation fails
@@ -58,3 +60,10 @@ export function CreateNote({ onNoteCreated }) {
     </form>
   );
 }
+
+// PropTypes validation to ensure onNoteCreated is passed and is a function
+CreateNote.propTypes = {
+  onNoteCreated: PropTypes.func.isRequired, // onNoteCreated should be a required function
+};
+
+export default CreateNote;
