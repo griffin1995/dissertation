@@ -11,7 +11,7 @@ export function CreateNote({ onNoteCreated }) {
 
   // Function to handle note creation and form submission
   const createNote = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); // Prevent default form submission behaviour
 
     // Send POST request to create a new note with title and content
     api

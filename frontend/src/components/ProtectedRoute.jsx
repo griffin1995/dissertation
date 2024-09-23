@@ -15,12 +15,12 @@ import { useState, useEffect } from "react";
 
 // ProtectedRoute component restricts access to certain routes based on user authentication
 export function ProtectedRoute({ children }) {
-  // State to track if the user is authorized; initialized to null to show loading
-  const [isAuthorized, setIsAuthorized] = useState(null);
+  // State to track if the user is authorised; initialised to null to show loading
+  const [isAuthorised, setIsAuthorised] = useState(null);
 
   // useEffect hook runs the authentication check when the component mounts
   useEffect(() => {
-    auth().catch(() => setIsAuthorized(false)); // If auth fails, set unauthorized
+    auth().catch(() => setIsAuthorised(false)); // If auth fails, set unauthorised
   }, []);
 
   // Function to refresh the access token using the refresh token stored in localStorage
@@ -36,15 +36,15 @@ export function ProtectedRoute({ children }) {
       // If the request is successful, save the new access token to localStorage
       if (response.status === 200) {
         localStorage.setItem(ACCESS_TOKEN, response.data.access);
-        setIsAuthorized(true); // Mark user as authorized
+        setIsAuthorised(true); // Mark user as authorised
       } else {
-        // Mark user as unauthorized if the response status is not 200
-        setIsAuthorized(false);
+        // Mark user as unauthorised if the response status is not 200
+        setIsAuthorised(false);
       }
     } catch (error) {
-      // Log errors to the console and mark user as unauthorized
+      // Log errors to the console and mark user as unauthorised
       console.log(error);
-      setIsAuthorized(false);
+      setIsAuthorised(false);
     }
   };
 
@@ -52,8 +52,8 @@ export function ProtectedRoute({ children }) {
   const auth = async () => {
     const token = localStorage.getItem(ACCESS_TOKEN); // Retrieve access token from localStorage
     if (!token) {
-      // If no token exists, set unauthorized state and exit
-      setIsAuthorized(false);
+      // If no token exists, set unauthorised state and exit
+      setIsAuthorised(false);
       return;
     }
 
@@ -67,16 +67,16 @@ export function ProtectedRoute({ children }) {
       // If the token is expired, attempt to refresh it
       await refreshToken();
     } else {
-      // If the token is valid, mark the user as authorized
-      setIsAuthorized(true);
+      // If the token is valid, mark the user as authorised
+      setIsAuthorised(true);
     }
   };
 
-  // While authorization is being checked, show a loading message
-  if (isAuthorized === null) {
+  // While authorisation is being checked, show a loading message
+  if (isAuthorised === null) {
     return <div>Checking permissions..</div>;
   }
 
-  // If authorized, render the child components; otherwise, redirect to the login page
-  return isAuthorized ? children : <Navigate to="login" />;
+  // If authorised, render the child components; otherwise, redirect to the login page
+  return isAuthorised ? children : <Navigate to="login" />;
 }

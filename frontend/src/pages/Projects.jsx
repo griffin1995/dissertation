@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Projects.scss"; // Ensure the correct path to styles
 import { ProjectCard } from "../components/ProjectCard"; // Adjust path if needed
 

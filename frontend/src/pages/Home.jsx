@@ -10,11 +10,18 @@ export function Home() {
 
       {/* Render the Why component, explaining why to choose the service */}
       <Why />
-      <br/><br/><br/><br/>
+      <br />
+      <br />
+      <br />
+      <br />
       {/* Render the Services component, listing the services offered by the company */}
       <Services />
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      <Why />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }

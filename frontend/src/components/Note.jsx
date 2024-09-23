@@ -7,9 +7,9 @@ export function Note({ note, onDelete }) {
   const date = new Date(note.created_at);
 
   // Extracting the date and time components
-  const hours = date.getHours().toString().padStart(2, "0"); // Format hours with leading zeros
-  const minutes = date.getMinutes().toString().padStart(2, "0"); // Format minutes with leading zeros
-  const day = date.getDate().toString().padStart(2, "0"); // Format day with leading zeros
+  const hours = date.getHours().toString().padStart(2, "0"); // Format hours with leading zeroes
+  const minutes = date.getMinutes().toString().padStart(2, "0"); // Format minutes with leading zeroes
+  const day = date.getDate().toString().padStart(2, "0"); // Format day with leading zeroes
   const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Months are zero-indexed, so add 1
   const year = date.getFullYear(); // Get the full year
 

@@ -13,7 +13,7 @@ export function Form({ route, method }) {
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); // Prevent default form submission behaviour
 
     try {
       // API call to the provided route with username and password

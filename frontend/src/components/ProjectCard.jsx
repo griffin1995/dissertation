@@ -1,4 +1,3 @@
-
 export function ProjectCard({ title, name, imageUrl, socials }) {
   return (
     <div className="card">
